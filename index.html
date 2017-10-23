@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="index, follow">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Golf Club Swing-weight Calculator </title>
+  <!-- Spectre.css CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+<!-- Body Start -->
+
+<div class="container grid-lg">
+  <div class="columns">
+    <div class="column col-10 col-lg-12">
+      <div class="bg-gray p-2">
+        <h2>Golf Club Swing-weight Calculator</h2>
+        <ol>
+          <li>Weigh the total club-weight as accurately as possible in grams.</li>
+          <li>Find the clubs balance point and mark it on the shaft.</li>
+          <li>Measure from the end of the grip cap to the balance point in inches.<br>
+              (Covert fraction to decimal if required)
+          <li>Enter the club name, weight and balance point into the fields below.</li>
+        </ol>
+      </div>
+          
+      <div id="app" class="mt-2">
+        <div v-cloak class="spinner loading loading-lg mt-2"></div>
+        <div v-cloak class="clearfix">     
+      
+          <div class="form-group columns">
+            <div class="column col-3">
+              <label class="form-label">Club</label>
+            </div>
+            <div class="column col-3">
+              <label class="form-label">Swing-weight</label>
+            </div>
+            <div class="column col-3">
+              <label class="form-label">Total Club Weight (Grams)</label>
+            </div>
+            <div class="column col-3">
+              <label class="form-label">Balance Point (Inches)</label>
+            </div>
+          </div>
+      
+          <template v-for="n in swRows">
+            <sw-club></sw-club>
+            <div class="divider"></div>
+          </template>
+      
+          <div class="float-right">
+            <button v-on:click="deleteRow" ref="deleteRow" class="btn btn-primary btn-action tooltip" data-tooltip="Remove last club">
+              <i class="icon icon-minus"></i>
+            </button>
+            <button v-on:click="addRow" ref="addRow" class="btn btn-primary btn-action tooltip" data-tooltip="Add additional club">
+              <i class="icon icon-plus"></i>
+            </button>
+          </div>
+        </div><!-- v-cloak -->
+      </div><!-- #app -->
+      <div class="divider divider-lg show-lg"></div>
+    </div><!-- column -->
+        
+    <div class="column col-mx-auto col-2 col-lg-7 col-xs-9">
+      <h5 class="text-center">Fraction to Decimal Chart</h5>
+      <table class="fraction-table table table-striped text-center">
+        <thead>
+          <tr>
+            <th>Fraction</th>
+            <th>Decimal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1/32</td><td>0.031</td></tr>
+          <tr><td>1/16</td><td>0.063</td></tr>
+          <tr><td>3/32</td><td>0.094</td></tr>
+          <tr><td>1/8</td><td>0.125</td></tr>
+          <tr><td>5/32</td><td>0.156</td></tr>
+          <tr><td>3/16</td><td>0.188</td></tr>
+          <tr><td>7/32</td><td>0.219</td></tr>
+          <tr><td>1/4</td><td>0.250</td></tr>
+          <tr><td>9/32</td><td>0.281</td></tr>
+          <tr><td>5/16</td><td>0.313</td></tr>
+          <tr><td>11/32</td><td>0.344</td></tr>
+          <tr><td>3/8</td><td>0.375</td></tr>
+          <tr><td>13/32</td><td>0.406</td></tr>
+          <tr><td>7/16</td><td>0.438</td></tr>
+          <tr><td>15/32</td><td>0.469</td></tr>
+          <tr><td>1/2</td><td>0.500</td></tr>
+          <tr><td>17/32</td><td>0.531</td></tr>
+          <tr><td>9/16</td><td>0.563</td></tr>
+          <tr><td>19/32</td><td>0.594</td></tr>
+          <tr><td>5/8</td><td>0.625</td></tr>
+          <tr><td>21/32</td><td>0.656</td></tr>
+          <tr><td>11/16</td><td>0.688</td></tr>
+          <tr><td>23/32</td><td>0.719</td></tr>
+          <tr><td>3/4</td><td>0.750</td></tr>
+          <tr><td>25/32</td><td>0.781</td></tr>
+          <tr><td>13/16</td><td>0.813</td></tr>
+          <tr><td>27/32</td><td>0.844</td></tr>
+          <tr><td>7/8</td><td>0.875</td></tr>
+          <tr><td>29/32</td><td>0.906</td></tr>
+          <tr><td>15/16</td><td>0.938</td></tr>
+          <tr><td>31/32</td><td>0.969</td></tr>
+          <tr><td>1</td><td>1</td></tr>
+        </tbody>
+      </table>
+    </div><!-- .column -->
+  </div><!-- .columns -->   
+</div><!-- .container -->
+
+<!-- Body End -->
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="sw-scale.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

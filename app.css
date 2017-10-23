@@ -1,0 +1,22 @@
+[v-cloak] { display: none; }
+
+.spinner { display: none }
+
+[v-cloak].spinner { display: block }
+
+body {
+  padding: 1.5rem 0.4rem 1.5rem;
+}
+
+.divider-lg.divider {
+  margin: .8rem 0;
+}
+
+.fraction-table.table {
+  font-size: 0.7rem;
+}
+
+.fraction-table.table td, .fraction-table.table th {
+    border-bottom: .05rem solid #e7e9ed;
+    padding: 0 .4rem;
+}

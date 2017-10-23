@@ -20,3 +20,7 @@ body {
     border-bottom: .05rem solid #e7e9ed;
     padding: 0 .4rem;
 }
+
+.footer {
+  margin: 1.5rem 0 0;
+}

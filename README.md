@@ -1,4 +1,4 @@
-# swingweight-calculator
+# Golf Club Swing-weight Calculator
 
 Web app to calculate the swing-weight of golf clubs using the total weight and balance point.
 

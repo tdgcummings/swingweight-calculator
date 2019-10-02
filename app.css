@@ -24,3 +24,7 @@ body {
 .footer {
   margin: 1.5rem 0 0;
 }
+
+.calc-headers {
+  font-weight: bold;
+}
